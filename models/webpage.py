@@ -43,6 +43,8 @@ class Webpage:
                     results.append([url, content])
             except TypeError:
                 pass
+            except KeyError:
+                pass
         return sorted(results)
 
     def get_meta_description(self):
