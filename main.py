@@ -7,11 +7,20 @@ data = read_json('sample_data/1.json')
 webpage = Webpage(data)
 analytics = Analytics(data)
 
+print('\n' + 'URL:')
 print(webpage.url)
+
+print('\n' + 'Status:')
 print(webpage.status)
+
+print('\n' + 'Content length:')
+print(len(analytics.content))
+
+print('\n' + 'Title:')
 print(webpage.title)
+
+print('\n' + 'Meta description:')
 print(webpage.meta_description)
-print('Length:', len(analytics.content))
 
 print('\n' + 'Links:')
 for link in webpage.links:
