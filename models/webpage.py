@@ -18,14 +18,17 @@ class Webpage:
     def get_images(self):
         results = []
         for item in self.data['tags']:
-            if item['name'] == 'img':
-                src = item['attributes']['src']
-                alt = item['attributes']['alt']
-                if not src:
-                    src = ''
-                if not alt:
-                    alt = ''
-                results.append([src, alt])
+            try:
+                if item['name'] == 'img':
+                    src = item['attributes']['src']
+                    alt = item['attributes']['alt']
+                    if not src:
+                        src = ''
+                    if not alt:
+                        alt = ''
+                    results.append([src, alt])
+            except KeyError:
+                pass
         return results
 
     # Returns all links as lists [href, contents]

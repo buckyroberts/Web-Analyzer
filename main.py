@@ -3,7 +3,7 @@ from models.analytics import Analytics
 from tools.general import *
 
 
-data = read_json('sample_data/2.json')
+data = read_json('sample_data/1.json')
 webpage = Webpage(data)
 analytics = Analytics(data)
 
@@ -12,8 +12,14 @@ print(webpage.status)
 
 print(webpage.title)
 print(webpage.meta_description)
-print(webpage.links)
-print(webpage.images)
+
+print('\n' + 'Links:')
+for link in webpage.links:
+    print(link)
+
+print('\n' + 'Images:')
+for image in webpage.images:
+    print(image)
 
 print('Length:', len(analytics.content))
 
