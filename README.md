@@ -2,4 +2,4 @@
 
 ## Overview
 
-Tool for analyzing websites using Python.
+Tool For Analyzing Websites Using Python.
